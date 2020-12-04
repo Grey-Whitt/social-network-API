@@ -1,0 +1,24 @@
+{
+  "name": "social-network-API",
+  "version": "1.0.0",
+  "description": "User story: AS A social media startup I WANT an API for my social network that uses a NoSQL database SO THAT my website can handle large amounts of unstructured data. ------- This is an API for a social network style app using MongoDB and Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grey-Whitt/social-network-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grey-Whitt/social-network-API/issues"
+  },
+  "homepage": "https://github.com/Grey-Whitt/social-network-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.3"
+  }
+}
