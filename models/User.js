@@ -13,6 +13,7 @@ const UserSchema = new Schema (
             required: 'You must provide a valid email address',
             trim: true,
             unique: true,
+            //use regex to check that the provided email is valid
             validate: function(email) {
                 return /^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)
             }          
@@ -31,6 +32,7 @@ const UserSchema = new Schema (
         ]
     },
     {
+        //model settings
         toJSON: {
             virtuals: true,
             getters: true
@@ -39,6 +41,7 @@ const UserSchema = new Schema (
     }
 );
 
+//virtual that will show how many friends a user has
 UserSchema.virtual('friendCount').get(function () {
     return this.friends.length
 })

@@ -3,6 +3,7 @@ var dateFormat = require("dateformat");
 
 const ReactionSchema = new Schema(
     {
+        //adding a custom id here, this helps identify the reactions id
         reactionId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
@@ -23,6 +24,7 @@ const ReactionSchema = new Schema(
         }
     },
     {
+        //model settings
         toJSON: {
             getters: true
         },
@@ -52,6 +54,7 @@ const ThoughtSchema = new Schema(
         reactions: [ReactionSchema]
     },
     {
+        //model settings
         toJSON: {
             virtuals: true,
             getters: true
@@ -60,6 +63,7 @@ const ThoughtSchema = new Schema(
     }
 )
 
+//a virtual that will show the amount of reactions a thought has
 ThoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });
